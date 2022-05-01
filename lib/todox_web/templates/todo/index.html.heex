@@ -1,0 +1,32 @@
+<h1>Listing Todos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Done</th>
+      <th>Important</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for todo <- @todos do %>
+    <tr>
+      <td><%= todo.title %></td>
+      <td><%= todo.description %></td>
+      <td><%= todo.done %></td>
+      <td><%= todo.important %></td>
+
+      <td>
+        <span><%= link "Show", to: Routes.todo_path(@conn, :show, todo) %></span>
+        <span><%= link "Edit", to: Routes.todo_path(@conn, :edit, todo) %></span>
+        <span><%= link "Delete", to: Routes.todo_path(@conn, :delete, todo), method: :delete, data: [confirm: "Are you sure?"] %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Todo", to: Routes.todo_path(@conn, :new) %></span>
