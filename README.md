@@ -11,7 +11,7 @@ Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
 Ready to run in production? Please [check our deployment guides](https://hexdocs.pm/phoenix/deployment.html).
 
 ## Todo
-[ ] - Front repagination
-[ ] - Categorizer
-[ ] - Notifier (telegram, email)
-[ ] - Task suggest
+- [ ] - Front repagination
+- [ ] - Categorizer
+- [ ] - Notifier (telegram, email)
+- [ ] - Task suggest
