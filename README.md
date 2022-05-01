@@ -15,3 +15,4 @@ Ready to run in production? Please [check our deployment guides](https://hexdocs
 - [ ] - Categorizer
 - [ ] - Notifier (telegram, email)
 - [ ] - Task suggest
+- [ ] - Platform integration (udemy, coursera) 
