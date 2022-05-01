@@ -1,4 +1,7 @@
-# Todox
+![banner](repo_assets/banner.png)
+---
+
+Todox its a todo tool to get things done (i don't know when xD)
 
 To start your Phoenix server:
 
