@@ -16,7 +16,13 @@
     <tr>
       <td><%= todo.title %></td>
       <td><%= todo.description %></td>
-      <td><%= todo.done %></td>
+      <td>
+        <%= if todo.done do %>
+          <img src={Routes.static_path(@conn, "/images/todo-done.png")} width="80" height="80"/>
+        <% else %>
+          <img src={Routes.static_path(@conn, "/images/todo.png")} width="80" height="80"/>
+        <% end %>
+      </td>
       <td><%= todo.important %></td>
 
       <td>
