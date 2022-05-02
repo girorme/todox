@@ -3,7 +3,7 @@
 
 Todox its a todo tool to get things done (i don't know when xD)
 
-To start your Phoenix server:
+To start server:
 
   * Install dependencies with `mix deps.get`
   * Create and migrate your database with `mix ecto.setup`
@@ -11,11 +11,11 @@ To start your Phoenix server:
 
 Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
 
-Ready to run in production? Please [check our deployment guides](https://hexdocs.pm/phoenix/deployment.html).
-
 ## Todo
+- [ ] - Add features to readme (fixed)
 - [ ] - Front repagination
+- [ ] - Release in web and binary format
 - [ ] - Categorizer
 - [ ] - Notifier (telegram, email)
 - [ ] - Task suggest
-- [ ] - Platform integration (udemy, coursera) 
+- [ ] - Platform integration (udemy, coursera)
