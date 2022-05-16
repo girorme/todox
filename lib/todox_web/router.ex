@@ -17,7 +17,7 @@ defmodule TodoxWeb.Router do
   scope "/", TodoxWeb do
     pipe_through :browser
 
-    get "/", PageController, :index
+    get "/", TodoController, :index
     resources "/todos", TodoController
   end
 
