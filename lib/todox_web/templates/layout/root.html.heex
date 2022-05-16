@@ -9,22 +9,10 @@
     <link phx-track-static rel="stylesheet" href={Routes.static_path(@conn, "/assets/app.css")}/>
     <script defer phx-track-static type="text/javascript" src={Routes.static_path(@conn, "/assets/app.js")}></script>
   </head>
-  <body>
-    <header>
-      <section class="container">
-        <nav>
-          <ul>
-            <li><a href="https://hexdocs.pm/phoenix/overview.html">Get Started</a></li>
-            <%= if function_exported?(Routes, :live_dashboard_path, 2) do %>
-              <li><%= link "LiveDashboard", to: Routes.live_dashboard_path(@conn, :home) %></li>
-            <% end %>
-          </ul>
-        </nav>
-        <a href="https://github.com/girorme/todox/" class="phx-logo">
-          <img src={Routes.static_path(@conn, "/images/banner.png")} alt="Todox Logo"/>
-        </a>
-      </section>
-    </header>
-    <%= @inner_content %>
+  <body class="bg-gradient-to-r from-indigo-50 to-purple-50">
+    <div class="container mx-auto">
+      <%= render "header.html", conn: @conn %>
+      <%= @inner_content %>
+    </div>
   </body>
 </html>

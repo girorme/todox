@@ -1,38 +1,28 @@
-<h1>Listing Todos</h1>
+<span>
+</span>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Description</th>
-      <th>Done</th>
-      <th>Important</th>
+<div class="px-6 pb-2 pt-5 ml-5 text-sm">
+    <%= link "New Todo" , to: Routes.todo_path(@conn, :new), class: "text-white bg-gradient-to-br from-purple-500 to-blue-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-2 py-2.5 text-center mr-2 mb-2" %>
+</div>
 
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-<%= for todo <- @todos do %>
-    <tr>
-      <td><%= todo.title %></td>
-      <td><%= todo.description %></td>
-      <td>
-        <%= if todo.done do %>
-          <img src={Routes.static_path(@conn, "/images/todo-done.png")} width="80" height="80"/>
-        <% else %>
-          <img src={Routes.static_path(@conn, "/images/todo.png")} width="80" height="80"/>
-        <% end %>
-      </td>
-      <td><%= todo.important %></td>
-
-      <td>
-        <span><%= link "Show", to: Routes.todo_path(@conn, :show, todo) %></span>
-        <span><%= link "Edit", to: Routes.todo_path(@conn, :edit, todo) %></span>
-        <span><%= link "Delete", to: Routes.todo_path(@conn, :delete, todo), method: :delete, data: [confirm: "Are you sure?"] %></span>
-      </td>
-    </tr>
-<% end %>
-  </tbody>
-</table>
-
-<span><%= link "New Todo", to: Routes.todo_path(@conn, :new) %></span>
+<div class="p-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-5">
+  <!--Card 1-->
+  <%= for todo <- @todos do %>
+    <div class="rounded-lg overflow-hidden shadow-lg border-dashed border-2 border-indigo-300">
+      <div class="px-6 py-4">
+        <div class="font-bold text-xl mb-2"><%= todo.title %></div>
+        <p class="text-gray-700 text-base">
+          <%= todo.description %>
+        </p>
+      </div>
+      <div class="px-6 pt-4 pb-2">
+        <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#photography</span>
+        <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#travel</span>
+        <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#winter</span>
+      </div>
+      <div class="px-6 pb-2 pt-4 text-sm">
+        <p class="inline-block text-gray-600"><%= todo.inserted_at %></p>
+      </div>
+    </div>
+  <% end %>
+</div>
