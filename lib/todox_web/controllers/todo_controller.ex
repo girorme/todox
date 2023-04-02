@@ -16,10 +16,10 @@ defmodule TodoxWeb.TodoController do
 
   def create(conn, %{"todo" => todo_params}) do
     case Todos.create_todo(todo_params) do
-      {:ok, todo} ->
+      {:ok, _todo} ->
         conn
         |> put_flash(:info, "Todo created successfully.")
-        |> redirect(to: Routes.todo_path(conn, :show, todo))
+        |> redirect(to: Routes.todo_path(conn, :index))
 
       {:error, %Ecto.Changeset{} = changeset} ->
         render(conn, "new.html", changeset: changeset)

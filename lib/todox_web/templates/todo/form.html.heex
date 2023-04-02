@@ -20,6 +20,12 @@
         <%= error_tag f, :description %>
       </div>
 
+      <div class="mb-6">
+        <%= label f, :tags, class: "block mb-2 text-sm font-medium " %>
+        <%= text_input f, :tags, class: "shadow-sm bg-gray-50 border border-gray-300 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" %>
+        <%= error_tag f, :tags %>
+      </div>
+
       <div class="flex items-start mb-1">
         <div class="flex items-center h-2">
           <%= label f, :done, class: "ml-2 text-sm font-medium " %>
@@ -41,3 +47,15 @@
       </div>
   </.form>
 </div>
+
+<script src="https://unpkg.com/@yaireo/tagify"></script>
+<script src="https://unpkg.com/@yaireo/tagify/dist/tagify.polyfills.min.js"></script>
+<script>
+  var input = document.querySelector('#todo_tags');
+  new Tagify(input, {
+    delimiters: '[, ]',
+    settings: {
+      context: 'todo[tags]'
+    }
+  });
+</script>

@@ -50,6 +50,8 @@ defmodule Todox.Todos do
 
   """
   def create_todo(attrs \\ %{}) do
+    attrs = normalize_tags(attrs)
+
     %Todo{}
     |> Todo.changeset(attrs)
     |> Repo.insert()
@@ -68,6 +70,8 @@ defmodule Todox.Todos do
 
   """
   def update_todo(%Todo{} = todo, attrs) do
+    attrs = normalize_tags(attrs)
+
     todo
     |> Todo.changeset(attrs)
     |> Repo.update()
@@ -104,5 +108,17 @@ defmodule Todox.Todos do
 
   def add_tags(%Todo{} = todo, tags) do
     update_todo(todo, %{tags: tags})
+  end
+
+  defp normalize_tags(%{"tags" => tags} = attrs) do
+    if tags == "" do
+      attrs
+    else
+      tags =
+        Poison.decode!(tags)
+        |> Enum.map(&(&1["value"]))
+
+      Map.update(attrs, "tags", [], fn _current_value -> tags end)
+    end
   end
 end
