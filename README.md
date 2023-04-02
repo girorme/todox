@@ -11,11 +11,12 @@ To start server:
 
 Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
 
+![screen](repo_assets/todox-screen.png)
+
 ## Todo
 - [ ] - Add features to readme (fixed)
-- [ ] - Front repagination
 - [ ] - Release in web and binary format
-- [ ] - Categorizer
+- [X] - Tags
 - [ ] - Notifier (telegram, email)
 - [ ] - Task suggest
 - [ ] - Platform integration (udemy, coursera)
