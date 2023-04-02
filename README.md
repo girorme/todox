@@ -15,8 +15,9 @@ Now you can visit [`localhost:4000/todos`](http://localhost:4000/todos) from you
 
 ## Todo
 - [ ] - Add features to readme (fixed)
+- [ ] - Add docker-compose / Dockerfile
 - [ ] - Release in web and binary format
 - [X] - Tags
-- [ ] - Notifier (telegram, email)
+- [ ] - Notifier (telegram, email) 
 - [ ] - Task suggest
 - [ ] - Platform integration (udemy, coursera)
