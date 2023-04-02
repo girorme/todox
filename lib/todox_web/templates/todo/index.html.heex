@@ -21,7 +21,8 @@
         <% end %>
       </div>
       <div class="px-6 pb-2 pt-4 text-sm">
-        <p class="inline-block text-gray-600"><%= todo.inserted_at %></p>
+        <span class="inline-block text-center px-1 py-0.5 rounded text-gray-600 text-xs"><%= todo.inserted_at %></span>
+        <%= link "Delete" , to: Routes.todo_path(@conn, :delete, todo), method: :delete, data: [confirm: "Are you sure?"], class: "inline-block text-center px-1 py-0.5 rounded bg-red-300 text-white text-xs" %>
       </div>
     </div>
   <% end %>
