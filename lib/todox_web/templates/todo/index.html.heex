@@ -16,9 +16,9 @@
         </p>
       </div>
       <div class="px-6 pt-4 pb-2">
-        <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#photography</span>
-        <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#travel</span>
-        <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#winter</span>
+        <%= for tag <- todo.tags do %>
+          <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2"><%= tag %></span>
+        <% end %>
       </div>
       <div class="px-6 pb-2 pt-4 text-sm">
         <p class="inline-block text-gray-600"><%= todo.inserted_at %></p>

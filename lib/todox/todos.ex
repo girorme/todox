@@ -101,4 +101,8 @@ defmodule Todox.Todos do
   def change_todo(%Todo{} = todo, attrs \\ %{}) do
     Todo.changeset(todo, attrs)
   end
+
+  def add_tags(%Todo{} = todo, tags) do
+    update_todo(todo, %{tags: tags})
+  end
 end
